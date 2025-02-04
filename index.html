@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Surprise</title>
+    <style>
+        body {
+            text-align: center;
+            background: url('https://source.unsplash.com/1600x900/?valentine,hearts') no-repeat center center/cover;
+            font-family: 'Pacifico', cursive;
+            color: #ff3366;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .gift-box {
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: relative;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .lid {
+            width: 220px;
+            height: 50px;
+            background: darkred;
+            position: absolute;
+            top: -50px;
+            left: -10px;
+            border-radius: 10px;
+            transition: transform 0.5s ease-in-out;
+        }
+        .box-content {
+            display: none;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+        }
+        .buttons button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .yes {
+            background-color: #ff3366;
+            color: white;
+        }
+        .yes:hover {
+            background-color: #ff6699;
+        }
+        .no {
+            background-color: #444;
+            color: white;
+        }
+        .no:hover {
+            background-color: #777;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="gift-box" onclick="openGift()">
+        <div class="lid"></div>
+        <span style="color:white; font-size: 1.5em;">🎁</span>
+    </div>
+    <div id="box-content" class="box-content">
+        <h1>I'm really sorry earlier, baby. Can you be my Valentine?</h1>
+        <div class="buttons">
+            <button class="yes" onclick="showMessage(true)">Yes</button>
+            <button class="no" onclick="showMessage(false)">No</button>
+        </div>
+        <div id="message" class="message"></div>
+    </div>
+    <script>
+        function openGift() {
+            document.querySelector('.lid').style.transform = 'rotate(-45deg) translateY(-50px)';
+            document.querySelector('.gift-box').style.display = 'none';
+            document.getElementById("box-content").style.display = "block";
+        }
+        function showMessage(isYes) {
+            let messageDiv = document.getElementById("message");
+            if (isYes) {
+                messageDiv.innerHTML = "HEHEHEHEHEHE THANKS BABY KOOOOO, AND ALSO FOR FORGIVING ME I LOVEEEE U SO MUCH!!!!!!";
+                messageDiv.style.color = "#ff3366";
+            } else {
+                messageDiv.innerHTML = "DI MO NA AQ LOVEEEE BABY Q :( IM REALLY SORRY PO, PERO LALABAS PARIN TAYO SA FEB 14";
+                messageDiv.style.color = "#444";
+            }
+        }
+    </script>
+</body>
+</html>
